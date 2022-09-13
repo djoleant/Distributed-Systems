@@ -10,6 +10,35 @@
   └─────────────────────────────────────────────────────────────────────────┘
 */
 
-public class TicketImpl {
+import java.rmi.server.UnicastRemoteObject;
+import java.security.ProtectionDomain;
+import java.util.List;
+import java.rmi.RemoteException;
 
+public class TicketImpl extends UnicastRemoteObject implements Ticket {
+
+  protected TicketImpl(int id, List<Integer> numbers) throws RemoteException {
+    super();
+    this.id = id;
+    this.numbers = numbers;
+    // callback?
+  }
+
+  @Override
+  public int getID() throws RemoteException {
+    return this.id;
+  }
+
+  @Override
+  public List<Integer> getNumbers() throws RemoteException {
+    return this.numbers;
+  }
+
+  @Override
+  public void setumbers(List<Integer> listOfNumbers) throws RemoteException {
+    this.numbers = listOfNumbers;
+  }
+
+  private int id;
+  private List<Integer> numbers;
 }

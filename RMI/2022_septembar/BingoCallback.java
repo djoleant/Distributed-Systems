@@ -10,6 +10,15 @@
   └─────────────────────────────────────────────────────────────────────────┘
 */
 
-public class BingoCallback {
-    
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface BingoCallback extends Remote {
+
+  void currentNumber() throws RemoteException;
+
+  void isWinner() throws RemoteException;
+
+  void isNotWinner() throws RemoteException;
+
 }
