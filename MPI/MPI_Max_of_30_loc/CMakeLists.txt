@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(MPI_sum_example VERSION 0.1.0)
+project(MPI_Max_of_30_loc VERSION 0.1.0)
 
 include(CTest)
 enable_testing()
 
-add_executable(MPI_sum_example main.cpp)
+add_executable(MPI_Max_of_30_loc main.cpp)
 target_link_libraries(main
   PRIVATE
   MPI_C)
