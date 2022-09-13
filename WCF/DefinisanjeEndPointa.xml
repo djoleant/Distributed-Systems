@@ -1,0 +1,13 @@
+<configuration>
+    <system.serviceModel>
+        <services>
+            <service type="NazivKlase.NazivApp">
+            <endpoint
+          contract="INazivInterfejsa"
+          binding="basicHttpBinding"
+          address="http://hostSajt/implementacijaServisa.svc:"
+        />
+            </service>
+        </services>
+    </system.serviceModel>
+</configuration>

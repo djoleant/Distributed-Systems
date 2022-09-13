@@ -1,4 +1,4 @@
-/* 
+/*
   ┌─────────────────────────────────────────────────────────────────────────┐
   │ Priprema ispita iz predmeta Distribuirani sistemi                       │
   │ Ispitni rok: Junski 2021                                                │
