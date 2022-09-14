@@ -1,8 +1,3 @@
-import java.rmi.server.UnicastRemoteObject;
-import java.util.List;
-
-import javax.swing.plaf.synth.SynthSpinnerUI;
-
 /*
   ┌─────────────────────────────────────────────────────────────────────────┐
   │ Priprema ispita iz predmeta Distribuirani sistemi                       │
@@ -21,6 +16,7 @@ import java.rmi.RemoteException;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 import java.util.Random;
 
 //DA LI JE CLIENT UVEK UnicastRemoteObject?
@@ -28,7 +24,8 @@ public class BingoClient extends UnicastRemoteObject implements BingoManager {
   public BingoClient(String host, String port, String service)
       throws RemoteException, MalformedURLException, NotBoundException {
     String lookup_String = "rmi://" + host + ":" + port + "/" + service;
-    manager = (BingoManager) Naming.lookup(lookup_String);
+    manager = (BingoManager) Naming.lookup(lookup_String); // MORA da castuje to nesto u interface managera!!!
+    // CASTOVANJE u INTERFACE a ne u implementaciju
 
   }
 
@@ -55,6 +52,10 @@ public class BingoClient extends UnicastRemoteObject implements BingoManager {
     int random_number = (int) Math.random() * 100;
     // kako sad ovaj deo sa proverom sa igracima
     // i sa callbackom
+  }
+
+  public static void main(String[] args) {
+    // TODO: implementacija rada klijenta
   }
 
   private BingoManager manager;

@@ -53,6 +53,7 @@ public class TagClient extends UnicastRemoteObject implements TagMessageCallback
      * @docauthor Trelent
      */
     public void sendMessage(TagMessage msg) throws RemoteException {
+        // to je zapravo remote method invocation (tu se poziva metoda udaljenog obj)
         this.m_manager.sendMessage(msg);
     }
 

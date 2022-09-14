@@ -22,7 +22,7 @@ import java.util.Scanner;
 public class BingoServer {
   public BingoServer(String host, String port, String service)
       throws RemoteException, MalformedURLException, AlreadyBoundException {
-    manager = new BingoManagerImpl();
+    manager = new BingoManagerImpl(); 
     LocateRegistry.createRegistry(Integer.parseInt(port));
     String bind_string = "rmi://" + host + ":" + port + "/" + service;
     Naming.bind(bind_string, manager);
@@ -34,7 +34,7 @@ public class BingoServer {
     Naming.unbind(unbind_string);
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) { //server MORA da ima MAIN
     try {
       // sta od argumenta unosimo ispod?
       BingoServer bs = new BingoServer("localhost", "1099", "MessageService");

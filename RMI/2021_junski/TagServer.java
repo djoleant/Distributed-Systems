@@ -43,7 +43,7 @@ public class TagServer {
      *
      * @docauthor Trelent
      */
-    public void shutdown(String host, String port, String service)
+    public void shutdown(String host, String port, String service) //ne mora
             throws RemoteException, MalformedURLException, NotBoundException {
         String unbind_string = "rmi://" + host + ":" + port + "/" + service;
         Naming.unbind(unbind_string);
@@ -62,6 +62,8 @@ public class TagServer {
     public static void main(String[] args) {
         try {
             TagServer ts = new TagServer("localhost", "1099", "MessageService");
+            
+            //scanner ne mora za ispit
             Scanner s = new Scanner(System.in);
             if (s.nextLine() == "end")
                 s.close();

@@ -22,3 +22,10 @@ public interface BingoCallback extends Remote {
   void isNotWinner() throws RemoteException;
 
 }
+
+
+// smer: server ka klijentu
+// callback je udaljeni obj
+
+// svaki client mora da kreira instancu implementacije svog callbacka
+
