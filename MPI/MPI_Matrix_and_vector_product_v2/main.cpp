@@ -80,11 +80,10 @@ void main(int argc, char *argv[])
         MPI_Send(y, m, MPI_INT, j, 0, MPI_COMM_WORLD);
       }
     }
-
-    else
-    { // ne-nula procesi primaju podatke
-      MPI_Recv(x, m, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
-    }
+  }
+  else
+  { // ne-nula procesi primaju podatke
+    MPI_Recv(x, m, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
   }
 
   // saljemo svima po element iz b
